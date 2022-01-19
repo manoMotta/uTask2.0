@@ -13,19 +13,35 @@ a {
   text-decoration: none;
 }
 
-/* ====== CONTAINER ====== */
-#header .container {
-  margin-left: 12.1875rem;
-  margin-right: 9.8125rem;
-}
+/* ====== UTILITIES ====== */
 
 .container {
   margin-left: 12.1875rem;
   margin-right: 12.1875rem;
 }
 
-/* ====== TITLE ====== */
-.title {
+nav {
+  height: 9.375rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card {
+  background-color: #fff;
+  color: #333;
+  border-radius: 14px;
+  border: 1px solid #d9d9d9;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* ====== NAVBAR ====== */
+#header .container {
+  margin-right: 9.8125rem;
+}
+/* Title */
+#header .title {
   width: 32.875rem;
   height: 5rem;
   position: absolute;
@@ -34,42 +50,36 @@ a {
   z-index: -1;
 }
 
-h1 {
+#header h1 {
   font: bold 4.5rem 'Ubuntu';
   color: #0c58d3;
   text-align: center;
 }
 
-.title span {
+#header .title span {
   font-style: italic;
   font-weight: normal;
 }
 
-.vector {
+#header .vector {
   width: 16.75rem;
   border: 1px solid #226ed8;
   transform: translate(50%);
 }
 
-.logo {
+/* Logo */
+#header .logo {
   width: 2.875rem;
   height: 5rem;
 }
 
-/* ====== NAV/MENU ====== */
-nav {
-  height: 9.375rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-nav .menu {
+/* Menu */
+#header nav .menu {
   opacity: 0;
   visibility: hidden;
 }
 
-nav.show .menu {
+#header nav.show .menu {
   opacity: 1;
   visibility: visible;
 
@@ -77,6 +87,7 @@ nav.show .menu {
   width: 32.125rem;
   height: 22.5rem;
   border-radius: 1rem;
+  z-index: 2;
 
   position: fixed;
   top: 50%;
@@ -86,23 +97,85 @@ nav.show .menu {
   filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-nav.show .overlay {
+#header nav.show .overlay {
   height: 100vh;
   width: 100vw;
   position: fixed;
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
 }
 
-nav ul li {
+#header nav ul li {
   text-align: center;
   font: bold 2.5rem 'Ubuntu';
   color: #ff0000;
 }
 
-.config {
+#header .config {
   width: 2.1875rem;
   height: 2.1875rem;
   cursor: pointer;
+}
+
+/* ====== MAIN ====== */
+.main .add-task {
+  width: 28.0625rem;
+  height: 2.8125rem;
+  margin-top: 6px;
+
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.main .form input[type='text'] {
+  border: 0;
+  width: 26.5rem;
+  height: 2rem;
+  margin-top: 0.4375rem;
+  margin-left: 1rem;
+  font: normal 1rem 'Ubuntu';
+}
+
+.form input::placeholder {
+  color: rgba(0, 0, 0, 0.7);
+  font: italic 1rem 'Ubuntu';
+}
+
+.form input:focus {
+  outline: none;
+}
+
+.main .cards {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.main .cards .card {
+  width: 18.75rem;
+  height: 21.875rem;
+  margin-top: 6.8125rem;
+  border-radius: 9px;
+}
+
+.main h2 {
+  position: relative;
+  text-align: center;
+  font: normal 2.25rem 'Roboto';
+  color: rgba(20, 20, 20, 1);
+  margin-top: 18px;
+}
+
+.main h2::after {
+  content: '';
+  width: 250px;
+  border: 1px solid #d9d9d9;
+  position: absolute;
+
+  bottom: 0;
+  left: 0;
+  margin-left: 23px;
+  margin-bottom: -10px;
 }

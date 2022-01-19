@@ -11,11 +11,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,700;1,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:ital,wght@0,400;0,700;1,400&display=swap"
       rel="stylesheet"
+    />
     />
   </head>
   <body>
+    <!-- Navbar -->
     <header id="header">
       <nav class="container">
         <div class="logo">
@@ -36,6 +38,34 @@
         </div>
       </nav>
     </header>
+
+    <!-- Main -->
+    <section class="main">
+      <div class="container">
+        <div class="add-task card">
+          <form>
+            <div class="form">
+              <input
+                type="text"
+                name="task"
+                placeholder="Adicionar Tarefa..."
+              />
+            </div>
+          </form>
+        </div>
+        <div class="cards">
+          <div class="card todo">
+            <h2>To do</h2>
+          </div>
+          <div class="card doing">
+            <h2>Doing</h2>
+          </div>
+          <div class="card done">
+            <h2>Done</h2>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <script src="script.js"></script>
   </body>
