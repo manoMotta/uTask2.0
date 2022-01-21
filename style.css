@@ -247,6 +247,8 @@ input[type='url'] {
   font: normal 1.375rem 'Ubuntu';
 }
 /* ====== MAIN ====== */
+
+/* Input */
 .main .add-task {
   width: 28.0625rem;
   height: 2.8125rem;
@@ -276,6 +278,7 @@ input[type='url'] {
   margin-left: 1rem;
 }
 
+/* Cards */
 .main .cards {
   display: flex;
   justify-content: space-evenly;
@@ -288,6 +291,10 @@ input[type='url'] {
   border-radius: 9px;
 }
 
+.main .head {
+  height: 51px;
+}
+
 .main h2::after {
   content: '';
   width: 15.625rem;
@@ -298,4 +305,49 @@ input[type='url'] {
   left: 0;
   margin-left: 23px;
   margin-bottom: -10px;
+}
+
+/* Tasks list */
+.main ul {
+  margin-top: 21px;
+  margin-left: 25px;
+  margin-right: 25px;
+  position: relative;
+}
+
+.main ul::after {
+  content: '';
+  width: 15.625rem;
+  border: 0.5px solid #ffffff;
+  position: absolute;
+
+  top: -10px;
+  left: 0;
+}
+
+.main ul li {
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+  font: normal 0.875rem 'Roboto';
+  transition: 0.4s linear;
+  position: relative;
+}
+
+.main ul li::after {
+  content: '';
+  width: 15.625rem;
+  border: 0.5px solid #f1f0f0;
+  position: absolute;
+
+  top: -10px;
+  left: 0;
+}
+
+.main ul li img {
+  float: right;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  margin-left: 14px;
 }
