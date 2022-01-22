@@ -11,17 +11,16 @@ over.addEventListener('click', function () {
   nav.classList.remove('show');
 });
 
-//Add Task
-const tasks = document.querySelector('.tasks');
+//Functions Add Task
 const input = document.querySelector('#task');
 const add = document.querySelector('.add-icon');
-const list = document.querySelector('.todo ul');
+const todoList = document.querySelector('.todo ul');
 
 add.addEventListener('click', e => {
   if (input.value != '') {
     const li = document.createElement('li');
     li.innerHTML = input.value;
-    list.appendChild(li);
+    todoList.appendChild(li);
 
     const removeIcon = document.createElement('img');
     removeIcon.classList.add('remove');
@@ -29,7 +28,7 @@ add.addEventListener('click', e => {
     li.appendChild(removeIcon);
 
     const arrow = document.createElement('img');
-    arrow.classList.add('arrow');
+    arrow.classList.add('arrowTodo');
     arrow.src = 'imgs/Arrow Right.svg';
     li.appendChild(arrow);
   }
@@ -47,4 +46,30 @@ add.addEventListener('click', e => {
     });
   }
   input.value = '';
+
+  //To do -> Doing
+  const move = document.querySelectorAll('.arrowTodo');
+  const doingList = document.querySelector('.doing ul');
+
+  for (let i = 0; i < move.length; i++) {
+    move[i].addEventListener('click', () => {
+      task = move[i].parentElement;
+      doingList.appendChild(task);
+
+      const arrowDoing = document.querySelector('.doing .arrowTodo');
+      arrowDoing.classList.add('arrowDoing');
+      arrowDoing.classList.remove('arrowTodo');
+
+      //Doing -> Done
+      const moveDone = document.querySelectorAll('.arrowDoing');
+      const doneList = document.querySelector('.done ul');
+
+      for (let i = 0; i < moveDone.length; i++) {
+        moveDone[i].addEventListener('click', () => {
+          taskDoing = moveDone[i].parentElement;
+          doneList.appendChild(taskDoing);
+        });
+      }
+    });
+  }
 });
