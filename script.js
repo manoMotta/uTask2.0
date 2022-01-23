@@ -11,12 +11,12 @@ over.addEventListener('click', function () {
   nav.classList.remove('show');
 });
 
-//Functions Add Task
+//Add Task
 const input = document.querySelector('#task');
 const add = document.querySelector('.add-icon');
 const todoList = document.querySelector('.todo ul');
 
-add.addEventListener('click', e => {
+add.addEventListener('click', () => {
   if (input.value != '') {
     const li = document.createElement('li');
     li.innerHTML = input.value;
@@ -31,6 +31,8 @@ add.addEventListener('click', e => {
     arrow.classList.add('arrowTodo');
     arrow.src = 'imgs/Arrow Right.svg';
     li.appendChild(arrow);
+
+    input.value = '';
   }
 
   //Remove Task
@@ -45,7 +47,6 @@ add.addEventListener('click', e => {
       }, 500);
     });
   }
-  input.value = '';
 
   //To do -> Doing
   const move = document.querySelectorAll('.arrowTodo');
@@ -54,11 +55,15 @@ add.addEventListener('click', e => {
   for (let i = 0; i < move.length; i++) {
     move[i].addEventListener('click', () => {
       task = move[i].parentElement;
+      move[i].parentElement.style.opacity = 0;
+      setTimeout(() => {
+        move[i].parentElement.style.opacity = 1;
+      }, 200);
       doingList.appendChild(task);
 
-      const arrowDoing = document.querySelector('.doing .arrowTodo');
-      arrowDoing.classList.add('arrowDoing');
-      arrowDoing.classList.remove('arrowTodo');
+      const arrowTodo = document.querySelector('.doing .arrowTodo');
+      arrowTodo.classList.add('arrowDoing');
+      arrowTodo.classList.remove('arrowTodo');
 
       //Doing -> Done
       const moveDone = document.querySelectorAll('.arrowDoing');
@@ -67,7 +72,29 @@ add.addEventListener('click', e => {
       for (let i = 0; i < moveDone.length; i++) {
         moveDone[i].addEventListener('click', () => {
           taskDoing = moveDone[i].parentElement;
+          moveDone[i].src = 'imgs/Return.svg';
           doneList.appendChild(taskDoing);
+
+          const arrowDoing = document.querySelector('.done .arrowDoing');
+          arrowDoing.classList.add('arrowDone');
+          arrowDoing.classList.remove('arrowDoing');
+
+          //Done -> To do
+          const moveTodo = document.querySelectorAll('.arrowDone');
+
+          for (let i = 0; i < moveTodo.length; i++) {
+            moveTodo[i].addEventListener('click', () => {
+              taskDone = moveTodo[i].parentElement;
+              todoList.appendChild(taskDone);
+              moveTodo[i].src = 'imgs/Arrow Right.svg';
+
+              const arrowDone = document.querySelector('.todo .arrowDone');
+              arrowDone.classList.add('arrowTodo');
+              arrowDone.classList.remove('arrowDone');
+
+              add.click();
+            });
+          }
         });
       }
     });
