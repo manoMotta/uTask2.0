@@ -11,15 +11,51 @@ over.addEventListener('click', function () {
   nav.classList.remove('show');
 });
 
+//Dark Mode
+const switcher = document.querySelector('.check');
+const body = document.querySelector('body');
+const addIcon = document.querySelector('.add-icon img');
+const add = document.querySelector('.add-icon');
+add.style.marginTop = '2px';
+
+switcher.addEventListener('click', function () {
+  body.classList.toggle('dark');
+
+  if (document.body.classList == 'dark') {
+    addIcon.src = 'imgs/darkmode/Add-blue.svg';
+    add.style.marginTop = '0';
+  } else {
+    addIcon.src = 'imgs/Add-black.svg';
+    add.style.marginTop = '2px';
+  }
+});
+
+//Change Background
+function change() {
+  const background = document.getElementById('url-background').value;
+  document.body.style.background = 'url(' + background + ')';
+  document.body.style.backgroundSize = '100%';
+  document.body.style.backgroundRepeat = 'no-repeat';
+}
+
+function reset() {
+  const backgroundUrl = document.getElementById('url-background');
+  document.body.style.background = '';
+  backgroundUrl.value = '';
+}
+
 //Add Task
 const input = document.querySelector('#task');
-const add = document.querySelector('.add-icon');
 const todoList = document.querySelector('.todo ul');
 
 add.addEventListener('click', () => {
   if (input.value != '') {
     const li = document.createElement('li');
     li.innerHTML = input.value;
+    li.style.opacity = 0;
+    setTimeout(() => {
+      li.style.opacity = 1;
+    }, 200);
     todoList.appendChild(li);
 
     const removeIcon = document.createElement('img');
@@ -29,7 +65,7 @@ add.addEventListener('click', () => {
 
     const arrow = document.createElement('img');
     arrow.classList.add('arrowTodo');
-    arrow.src = 'imgs/Arrow Right.svg';
+    arrow.src = 'imgs/Arrow.svg';
     li.appendChild(arrow);
 
     input.value = '';
@@ -55,6 +91,8 @@ add.addEventListener('click', () => {
   for (let i = 0; i < move.length; i++) {
     move[i].addEventListener('click', () => {
       task = move[i].parentElement;
+      move[i].src = 'imgs/Check.svg';
+
       move[i].parentElement.style.opacity = 0;
       setTimeout(() => {
         move[i].parentElement.style.opacity = 1;
@@ -86,7 +124,7 @@ add.addEventListener('click', () => {
             moveTodo[i].addEventListener('click', () => {
               taskDone = moveTodo[i].parentElement;
               todoList.appendChild(taskDone);
-              moveTodo[i].src = 'imgs/Arrow Right.svg';
+              moveTodo[i].src = 'imgs/Arrow.svg';
 
               const arrowDone = document.querySelector('.todo .arrowDone');
               arrowDone.classList.add('arrowTodo');

@@ -14,7 +14,6 @@ a {
 }
 
 /* ====== UTILITIES ====== */
-
 .container {
   margin-left: 12.1875rem;
   margin-right: 12.1875rem;
@@ -79,8 +78,26 @@ input[type='url'] {
   transform: scale(0.98);
 }
 
-.switch {
-  cursor: pointer;
+div::-webkit-scrollbar {
+  width: 10px;
+}
+
+div::-webkit-scrollbar-track {
+  background-color: #f8f8f8;
+  margin-top: 70px;
+  margin-bottom: 12px;
+}
+
+div::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #3f7edc;
+  border: 2px solid #f8f8f8;
+}
+
+input[type='checkbox'] {
+  -webkit-appearance: none;
+  visibility: hidden;
+  display: none;
 }
 
 /* ====== NAVBAR ====== */
@@ -173,6 +190,7 @@ input[type='url'] {
   display: flex;
   justify-content: space-between;
   margin-right: 24px;
+  align-items: center;
 }
 
 #header .menu .background {
@@ -203,6 +221,7 @@ input[type='url'] {
   height: 43px;
   background: #fbfbfb;
   margin-top: 14px;
+  border-radius: 10px 10px 0 0;
 }
 
 #header .form input[type='url'] {
@@ -246,6 +265,41 @@ input[type='url'] {
 #header .btn-primary {
   font: normal 1.375rem 'Ubuntu';
 }
+
+/* Dark Mode Switch */
+.check {
+  position: relative;
+  display: block;
+  width: 80px;
+  height: 34px;
+  background: #e1e1e1;
+  cursor: pointer;
+  border-radius: 25px;
+  overflow: hidden;
+  transition: ease-in 0.5s;
+}
+
+input[type='checkbox']:checked ~ .check {
+  background: rgb(0, 0, 0);
+}
+
+.check:before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 4px;
+  background: #fff;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  transition: 0.5s;
+}
+
+input[type='checkbox']:checked ~ .check:before {
+  transform: translateX(43px);
+  background: #3071d9;
+}
+
 /* ====== MAIN ====== */
 
 /* Input */
@@ -289,10 +343,7 @@ input[type='url'] {
   height: 21.875rem;
   margin-top: 6.8125rem;
   border-radius: 9px;
-}
-
-.main .head {
-  height: 51px;
+  overflow: auto;
 }
 
 .main h2::after {
@@ -309,7 +360,7 @@ input[type='url'] {
 
 /* Tasks list */
 .main ul {
-  margin-top: 21px;
+  margin-top: 38px;
   margin-left: 25px;
   margin-right: 25px;
   position: relative;
@@ -322,16 +373,20 @@ input[type='url'] {
   position: absolute;
 
   top: -10px;
-  left: 0;
+  left: -2px;
 }
 
 .main ul li {
   align-items: center;
   width: 100%;
   margin-top: 20px;
+  margin-bottom: 20px;
   font: normal 0.875rem 'Roboto';
   transition: 0.4s linear;
   position: relative;
+
+  word-wrap: break-word;
+  text-align: justify;
 }
 
 .main ul li::after {
@@ -341,13 +396,104 @@ input[type='url'] {
   position: absolute;
 
   top: -10px;
-  left: 0;
+  left: -2px;
 }
 
 .main ul li img {
   float: right;
-  width: 16px;
-  height: 16px;
+  width: 15px;
+  height: 15px;
   cursor: pointer;
   margin-left: 14px;
+}
+
+.main .done li {
+  font-style: italic;
+  text-decoration: line-through;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* ====== DARK MODE ====== */
+html .dark {
+  background: #232323;
+}
+
+.dark .card {
+  background-color: #484e54;
+  border: 0;
+}
+
+.dark .main ul::after {
+  border: 0.5px solid #484e54;
+}
+
+.dark .main ul li::after {
+  border: 0.5px solid #393939;
+}
+
+.dark .main ul li {
+  color: #fff;
+}
+
+.dark .main h2 {
+  color: #ececec;
+}
+
+.dark .main .done li {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.dark .main .form input[type='text'] {
+  background-color: #484e54;
+  color: #ececec;
+}
+
+.dark .form input[type='text'],
+input[type='url'] {
+  color: #fff;
+}
+
+.dark .form input::placeholder {
+  color: rgba(236, 236, 236, 1);
+}
+
+.dark div::-webkit-scrollbar-track {
+  background-color: #484e54;
+  margin-top: 70px;
+  margin-bottom: 12px;
+}
+
+.dark div::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #3f7edc;
+  border: 2px solid #484e54;
+}
+
+.dark #header h2 {
+  color: #fff;
+}
+
+.dark #header nav.show .menu {
+  background: #484e54;
+}
+
+.dark h3 {
+  color: #fff;
+}
+
+.dark #header .form {
+  background: #232323;
+}
+
+.dark #header .form input[type='url'] {
+  background: #232323;
+}
+
+.dark #header .btn-outline {
+  background-color: #484e54;
+  color: #fff;
+}
+
+.dark #header nav.show .overlay {
+  background-color: rgba(0, 0, 0, 0.5);
 }

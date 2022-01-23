@@ -34,21 +34,32 @@
           <div class="functions">
             <div class="dark-mode">
               <h3>Dark Mode</h3>
-              <div class="switch">
-                <img src="imgs/Switch Off.svg" alt="Switch Off" />
-              </div>
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="check"></span>
+              </label>
             </div>
             <div class="background">
               <h3>Plano de Fundo</h3>
             </div>
             <form>
               <div class="form">
-                <input type="url" name="url imagem" placeholder="Url" />
+                <input type="url" id="url-background" placeholder="Url" />
               </div>
             </form>
             <div class="buttons">
-              <input type="reset" value="Limpar" class="btn btn-outline" />
-              <input type="submit" value="Aplicar" class="btn btn-primary" />
+              <input
+                onclick="reset()"
+                type="reset"
+                value="Limpar"
+                class="btn btn-outline"
+              />
+              <input
+                onclick="change()"
+                type="submit"
+                value="Aplicar"
+                class="btn btn-primary"
+              />
             </div>
           </div>
         </div>
@@ -73,7 +84,7 @@
             </div>
           </form>
           <div class="add-icon">
-            <img src="imgs/Vector.svg" alt="Add Icon" />
+            <img src="imgs/add-black.svg" alt="Add Icon" />
           </div>
         </div>
         <div class="cards">
