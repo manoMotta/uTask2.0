@@ -15,12 +15,12 @@ a {
 
 /* ====== UTILITIES ====== */
 .container {
-  margin-left: 12.1875rem;
-  margin-right: 12.1875rem;
+  margin-left: 195px;
+  margin-right: 195px;
 }
 
 nav {
-  height: 9.375rem;
+  height: 150px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -38,25 +38,25 @@ nav {
 h2 {
   position: relative;
   text-align: center;
-  font: normal 2.25rem 'Roboto';
+  font: normal 36px 'Roboto';
   color: rgba(20, 20, 20, 1);
   margin-top: 18px;
 }
 
 h3 {
-  font: normal 1.5rem 'Roboto';
+  font: normal 24px 'Roboto';
 }
 
 .form input[type='text'],
 input[type='url'] {
   border: 0;
-  font: normal 1rem 'Ubuntu';
+  font: normal 16px 'Ubuntu';
   color: rgba(58, 58, 58, 1);
 }
 
 .form input::placeholder {
   color: rgba(0, 0, 0, 0.7);
-  font: italic 1rem 'Ubuntu';
+  font: italic 16px 'Ubuntu';
 }
 
 .form input:focus {
@@ -100,14 +100,22 @@ input[type='checkbox'] {
   display: none;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-text-fill-color: #3a3a3a !important;
+  box-shadow: 0 0 0 30px #fbfbfb inset !important;
+}
+
 /* ====== NAVBAR ====== */
 #header .container {
-  margin-right: 9.8125rem;
+  margin-right: 157px;
 }
 /* Title */
 #header .title {
-  width: 32.875rem;
-  height: 5rem;
+  width: 526px;
+  height: 80px;
   position: absolute;
   left: 50%;
   transform: translate(-50%);
@@ -115,7 +123,7 @@ input[type='checkbox'] {
 }
 
 #header h1 {
-  font: bold 4.5rem 'Ubuntu';
+  font: bold 72px 'Ubuntu';
   color: #0c58d3;
   text-align: center;
 }
@@ -126,21 +134,21 @@ input[type='checkbox'] {
 }
 
 #header .vector {
-  width: 16.75rem;
+  width: 268px;
   border: 1px solid #226ed8;
   transform: translate(50%);
 }
 
 /* Logo */
 #header .logo {
-  width: 2.875rem;
-  height: 5rem;
+  width: 46px;
+  height: 80px;
 }
 
 /* Gear */
 #header .config {
-  width: 2.1875rem;
-  height: 2.1875rem;
+  width: 35px;
+  height: 35px;
   cursor: pointer;
 }
 
@@ -159,9 +167,9 @@ input[type='checkbox'] {
   visibility: visible;
 
   background: #ffffff;
-  width: 32.125rem;
-  height: 22.5rem;
-  border-radius: 1rem;
+  width: 514px;
+  height: 360px;
+  border-radius: 16px;
   z-index: 2;
 
   position: fixed;
@@ -226,10 +234,10 @@ input[type='checkbox'] {
 
 #header .form input[type='url'] {
   border: 0;
-  width: 28.5rem;
-  height: 2rem;
-  margin-top: 0.4375rem;
-  margin-left: 0.2rem;
+  width: 456px;
+  height: 32px;
+  margin-top: 7px;
+  margin-left: 3.2px;
   background: #fbfbfb;
 }
 
@@ -259,11 +267,11 @@ input[type='checkbox'] {
   vertical-align: middle;
 
   line-height: 100px;
-  font: normal 1.375rem 'Ubuntu';
+  font: normal 22px 'Ubuntu';
 }
 
 #header .btn-primary {
-  font: normal 1.375rem 'Ubuntu';
+  font: normal 22px 'Ubuntu';
 }
 
 /* Dark Mode Switch */
@@ -304,8 +312,8 @@ input[type='checkbox']:checked ~ .check:before {
 
 /* Input */
 .main .add-task {
-  width: 28.0625rem;
-  height: 2.8125rem;
+  width: 449px;
+  height: 45px;
   margin-top: 6px;
 
   position: absolute;
@@ -326,10 +334,10 @@ input[type='checkbox']:checked ~ .check:before {
 
 .main .form input[type='text'] {
   border: 0;
-  width: 26.5rem;
-  height: 2rem;
-  margin-top: 0.4375rem;
-  margin-left: 1rem;
+  width: 424px;
+  height: 32px;
+  margin-top: 7px;
+  margin-left: 16px;
 }
 
 /* Cards */
@@ -339,16 +347,16 @@ input[type='checkbox']:checked ~ .check:before {
 }
 
 .main .cards .card {
-  width: 18.75rem;
-  height: 21.875rem;
-  margin-top: 6.8125rem;
+  width: 300px;
+  height: 350px;
+  margin-top: 109px;
   border-radius: 9px;
   overflow: auto;
 }
 
 .main h2::after {
   content: '';
-  width: 15.625rem;
+  width: 250px;
   border: 1px solid #d9d9d9;
   position: absolute;
 
@@ -368,7 +376,7 @@ input[type='checkbox']:checked ~ .check:before {
 
 .main ul::after {
   content: '';
-  width: 15.625rem;
+  width: 250px;
   border: 0.5px solid #ffffff;
   position: absolute;
 
@@ -381,7 +389,7 @@ input[type='checkbox']:checked ~ .check:before {
   width: 100%;
   margin-top: 20px;
   margin-bottom: 20px;
-  font: normal 0.875rem 'Roboto';
+  font: normal 14px 'Roboto';
   transition: 0.4s linear;
   position: relative;
 
@@ -391,7 +399,7 @@ input[type='checkbox']:checked ~ .check:before {
 
 .main ul li::after {
   content: '';
-  width: 15.625rem;
+  width: 250px;
   border: 0.5px solid #f1f0f0;
   position: absolute;
 
@@ -405,6 +413,12 @@ input[type='checkbox']:checked ~ .check:before {
   height: 15px;
   cursor: pointer;
   margin-left: 14px;
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+
+.main ul li:hover img {
+  opacity: 1;
 }
 
 .main .done li {
@@ -449,7 +463,7 @@ html .dark {
 }
 
 .dark .form input[type='text'],
-input[type='url'] {
+.dark .form input[type='url'] {
   color: #fff;
 }
 
@@ -496,4 +510,20 @@ input[type='url'] {
 
 .dark #header nav.show .overlay {
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+.dark input:-webkit-autofill,
+.dark input:-webkit-autofill:hover,
+.dark input:-webkit-autofill:focus,
+.dark input:-webkit-autofill:active {
+  box-shadow: 0 0 0 30px #232323 inset !important;
+  -webkit-text-fill-color: #fff !important;
+  caret-color: #fff;
+}
+
+/* ====== MEDIA QUERY ====== */
+@media (max-width: 1359px) {
+  body {
+    background-color: blue;
+  }
 }

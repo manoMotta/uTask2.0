@@ -11,7 +11,7 @@ over.addEventListener('click', function () {
   nav.classList.remove('show');
 });
 
-//Dark Mode
+//Dark Modes
 const switcher = document.querySelector('.check');
 const body = document.querySelector('body');
 const addIcon = document.querySelector('.add-icon img');
@@ -22,7 +22,7 @@ switcher.addEventListener('click', function () {
   body.classList.toggle('dark');
 
   if (document.body.classList == 'dark') {
-    addIcon.src = 'imgs/darkmode/Add-blue.svg';
+    addIcon.src = 'imgs/dark-mode/Add-blue.svg';
     add.style.marginTop = '0';
   } else {
     addIcon.src = 'imgs/Add-black.svg';
@@ -31,21 +31,32 @@ switcher.addEventListener('click', function () {
 });
 
 //Change Background
+const backgroundUrl = document.getElementById('url-background');
+const submit = document.querySelector('btn-primary');
+
 function change() {
   const background = document.getElementById('url-background').value;
-  document.body.style.background = 'url(' + background + ')';
-  document.body.style.backgroundSize = '100%';
-  document.body.style.backgroundRepeat = 'no-repeat';
+  if (background != '') {
+    document.body.style.background = 'url(' + background + ')';
+    document.body.style.backgroundSize = '100%';
+    document.body.style.backgroundRepeat = 'no-repeat';
+  }
 }
 
 function reset() {
-  const backgroundUrl = document.getElementById('url-background');
   document.body.style.background = '';
   backgroundUrl.value = '';
 }
 
+backgroundUrl.addEventListener('keypress', event => {
+  if (event.key == 'Enter') {
+    event.preventDefault();
+    change();
+  }
+});
+
 //Add Task
-const input = document.querySelector('#task');
+const input = document.getElementById('task');
 const todoList = document.querySelector('.todo ul');
 
 add.addEventListener('click', () => {
@@ -136,5 +147,13 @@ add.addEventListener('click', () => {
         });
       }
     });
+  }
+});
+
+//Add with Enter key
+input.addEventListener('keypress', event => {
+  if (event.key == 'Enter') {
+    event.preventDefault();
+    add.click();
   }
 });
