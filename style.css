@@ -100,10 +100,10 @@ input[type='checkbox'] {
   display: none;
 }
 
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
+#header input:-webkit-autofill,
+#header input:-webkit-autofill:hover,
+#header input:-webkit-autofill:focus,
+#header input:-webkit-autofill:active {
   -webkit-text-fill-color: #3a3a3a !important;
   box-shadow: 0 0 0 30px #fbfbfb inset !important;
 }
@@ -512,10 +512,10 @@ html .dark {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.dark input:-webkit-autofill,
-.dark input:-webkit-autofill:hover,
-.dark input:-webkit-autofill:focus,
-.dark input:-webkit-autofill:active {
+.dark #header input:-webkit-autofill,
+.dark #header input:-webkit-autofill:hover,
+.dark #header input:-webkit-autofill:focus,
+.dark #header input:-webkit-autofill:active {
   box-shadow: 0 0 0 30px #232323 inset !important;
   -webkit-text-fill-color: #fff !important;
   caret-color: #fff;
@@ -523,7 +523,93 @@ html .dark {
 
 /* ====== MEDIA QUERY ====== */
 @media (max-width: 1359px) {
-  body {
-    background-color: blue;
+  nav {
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .container {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  #header .container {
+    margin-right: 0;
+  }
+
+  #header .title {
+    width: 400px;
+    left: 50%;
+    transform: translate(-58%);
+    z-index: -1;
+  }
+
+  #header .vector {
+    left: 50%;
+    transform: translate(25%);
+  }
+
+  #header .config {
+    margin-left: 18px;
+  }
+
+  #header .show .config {
+    margin-left: 335px;
+  }
+
+  #header .logo {
+    display: none;
+  }
+
+  #header nav.show .menu {
+    width: 340px;
+  }
+
+  #header .menu h2::after {
+    width: 288px;
+  }
+
+  #header .form {
+    width: 293px;
+  }
+
+  #header .form::after {
+    width: 291px;
+  }
+
+  #header .form input[type='url'] {
+    width: 282px;
+  }
+
+  .main .cards {
+    display: grid;
+    margin-top: 0px;
+  }
+
+  .main .cards .card {
+    width: 300px;
+    margin-top: 100px;
+  }
+  .main .cards .doing,
+  .main .cards .done {
+    margin-top: 30px;
+  }
+
+  .main .cards .done {
+    margin-bottom: 50px;
+  }
+
+  .main .add-task {
+    width: 300px;
+    transform: translate(-59%);
+  }
+
+  .main .form input[type='text'] {
+    width: 270px;
+  }
+  .main ul li img {
+    opacity: 1;
   }
 }
