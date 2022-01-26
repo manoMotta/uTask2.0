@@ -15,7 +15,7 @@
       rel="stylesheet"
     />
   </head>
-  <body>
+  <body onload="checkCookie()">
     <!-- Navbar -->
     <header id="header">
       <nav class="container">
@@ -35,7 +35,7 @@
             <div class="dark-mode">
               <h3>Dark Mode</h3>
               <label class="switch">
-                <input type="checkbox" />
+                <input type="checkbox" id="check" />
                 <span class="check"></span>
               </label>
             </div>
@@ -92,24 +92,38 @@
             <div class="head">
               <h2>To do</h2>
             </div>
-            <ul></ul>
+            <ul class="listTodo"></ul>
           </div>
           <div class="card doing">
             <div class="head">
               <h2>Doing</h2>
             </div>
-            <ul></ul>
+            <ul class="listDoing"></ul>
           </div>
           <div class="card done">
             <div class="head">
               <h2>Done</h2>
             </div>
-            <ul></ul>
+            <ul class="listDone"></ul>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Cookies -->
+    <div id="cookies">
+      <div class="cookies">
+        <div>
+          <p>Você está de acordo com a nossa política de uso de cookies 🍪</p>
+          <p>para amplificar sua experiência no site?</p>
+        </div>
+        <div class="cookies-btns">
+          <button id="d-agree">Não concordo</button>
+          <button id="agree">Sim, concordo</button>
+          <img id="x" src="imgs/X.svg" alt="X" />
+        </div>
+      </div>
+    </div>
     <!-- Script -->
     <script src="script.js"></script>
   </body>

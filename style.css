@@ -427,6 +427,67 @@ input[type='checkbox']:checked ~ .check:before {
   color: rgba(0, 0, 0, 0.5);
 }
 
+/* ====== COOKIES ====== */
+#cookies {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-color: rgba(12, 88, 211, 0.85);
+  color: #fff;
+  z-index: 1;
+  border-radius: 16px 16px 0 0;
+  display: none;
+}
+
+.cookies {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 300px 20px 300px;
+}
+
+.cookies p {
+  font: italic 16px 'Ubuntu';
+}
+
+.cookies #agree {
+  width: 152px;
+  height: 38px;
+  font: normal 16px 'Ubuntu';
+  cursor: pointer;
+  background-color: #fff;
+  border: 2px solid #fff;
+}
+
+.cookies #d-agree {
+  width: 120px;
+  height: 38px;
+  font: normal 14px 'Ubuntu';
+  cursor: pointer;
+  margin-right: 16px;
+  color: #fff;
+  background: 0;
+  border: 2px solid #fff;
+}
+
+.cookies #agree:hover {
+  transform: scale(0.98);
+}
+
+.cookies #d-agree:hover {
+  transform: scale(0.98);
+}
+
+.cookies #x:hover {
+  transform: scale(1.15);
+}
+
+.cookies img {
+  top: 10px;
+  margin-left: 28px;
+  position: absolute;
+  cursor: pointer;
+}
+
 /* ====== DARK MODE ====== */
 html .dark {
   background: #232323;
