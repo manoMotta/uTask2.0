@@ -347,7 +347,7 @@ agreeBtn.addEventListener('click', () => {
   let expires = 'expires=' + d.toUTCString();
   document.cookie = 'cookie' + '=' + true + ';' + expires + ';path=/';
 
-  concent = getCookie2('cookie');
+  concent = getConcent('cookie');
 });
 
 dAgreeBtn.addEventListener('click', () => {
@@ -358,7 +358,7 @@ closeBtn.addEventListener('click', () => {
   cookiesPopup.style.display = 'none';
 });
 
-function getCookie2(cname) {
+function getConcent(cname) {
   let name = cname + '=';
   let decodedCookie = decodeURIComponent(document.cookie);
   let ca = decodedCookie.split(';');
@@ -374,4 +374,4 @@ function getCookie2(cname) {
   return '';
 }
 
-var concent = getCookie2('cookie');
+var concent = getConcent('cookie');

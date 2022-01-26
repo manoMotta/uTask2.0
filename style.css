@@ -100,10 +100,10 @@ input[type='checkbox'] {
   display: none;
 }
 
-#header input:-webkit-autofill,
-#header input:-webkit-autofill:hover,
-#header input:-webkit-autofill:focus,
-#header input:-webkit-autofill:active {
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
   -webkit-text-fill-color: #3a3a3a !important;
   box-shadow: 0 0 0 30px #fbfbfb inset !important;
 }
@@ -573,13 +573,20 @@ html .dark {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+.dark input:-webkit-autofill,
+.dark input:-webkit-autofill:hover,
+.dark input:-webkit-autofill:focus,
+.dark input:-webkit-autofill:active {
+  box-shadow: 0 0 0 30px #484e54 inset !important;
+  -webkit-text-fill-color: #fff !important;
+  caret-color: #fff;
+}
+
 .dark #header input:-webkit-autofill,
 .dark #header input:-webkit-autofill:hover,
 .dark #header input:-webkit-autofill:focus,
 .dark #header input:-webkit-autofill:active {
   box-shadow: 0 0 0 30px #232323 inset !important;
-  -webkit-text-fill-color: #fff !important;
-  caret-color: #fff;
 }
 
 /* ====== MEDIA QUERY ====== */
@@ -653,6 +660,7 @@ html .dark {
     width: 300px;
     margin-top: 100px;
   }
+
   .main .cards .doing,
   .main .cards .done {
     margin-top: 30px;
@@ -672,5 +680,42 @@ html .dark {
   }
   .main ul li img {
     opacity: 1;
+  }
+
+  #cookies {
+    width: 350px;
+    height: 175px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 16px;
+    filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
+    padding: 25px;
+  }
+
+  .cookies {
+    display: block;
+    justify-content: space-between;
+    margin: 0;
+    position: relative;
+    word-wrap: break-word;
+    text-align: center;
+  }
+
+  .cookies .cookies-btns {
+    justify-content: space-between;
+  }
+
+  .cookies #agree {
+    margin-top: 30px;
+  }
+
+  .cookies #d-agree {
+    margin-right: 20px;
+  }
+
+  .cookies #x {
+    display: none;
   }
 }
